@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big O Notation</title>
+</head>
+<body>
+<h2>    **Step One: Simplifying Expressions**</h2>
+<h3>    Simplify the following big O expressions as much as possible:</h3>
+<p>
+    1. O(n + 10) = O(n) <br>
+    2. O(100 * n) = O(n) <br>
+    3. O(25) = O(1) <br>
+    4. O(n^2 + n^3) = O(n^3)<br>
+    5. O(n + n + n + n) = O(n)<br>
+    6. O(1000 * log(n) + n) = O(n)<br>
+    7. O(1000 * n * log(n) + n) = O(n * loh(n)+ n)<br>
+    8. O(2^n + n^2) = O(2^n)<br>
+    9. O(5 + 3 + 1) = O(1)<br>
+    10. O(n + n^(1/2) + n^2 + n * log(n)^10) = O(n^2)<br>
+</p>    
+
+<h2>Step Two: Calculating Time Complexity</h2>
+<h3>Determine the time complexities for each of the following functions. If you're not sure what these functions do, copy and paste them into the console and experiment with different inputs!</h3>
+
+<p>
+    function logUpTo(n) { <br>
+        for (let i = 1; i <= n; i++) {<br>
+          console.log(i);<br>
+        }<br>
+      }<br>
+    Time complexity: O(n)<br>
+
+
+    function logAtLeast10(n) {<br>
+        for (let i = 1; i <= Math.max(n, 10); i++) {<br>
+         console.log(i);<br>
+        }<br>
+      }<br>
+    Time complexity: O(n)<br>
+
+
+    function logAtMost10(n) {<br>
+        for (let i = 1; i <= Math.min(n, 10); i++) {<br>
+          console.log(i);<br>
+        }<br>
+      }<br>
+    Time complexity: O(1)<br>
+
+
+
+    function subtotals(array) {<br>
+        let subtotalArray = [];<br>
+        for (let i = 0; i < array.length; i++) {<br>
+          let subtotal = 0;<br>
+          for (let j = 0; j <= i; j++) {<br>
+            subtotal += array[j];<br>
+          }<br>
+          subtotalArray.push(subtotal);<br>
+        }<br>
+        return subtotalArray;<br>
+      }<br>
+
+    Time complexity: O(n^2)<br> 
+
+
+    
+    function vowelCount(str) {<br>
+        let vowelCount = {};<br>
+        const vowels = "aeiouAEIOU";<br>
+      
+        for (let char of str) {<br>
+          if(vowels.includes(char)) {<br>
+            if(char in vowelCount) {<br>
+              vowelCount[char] += 1;<br>
+            } else {<br>
+              vowelCount[char] = 1;<br>
+            }<br>
+          }<br>
+        }<br>
+      
+        return vowelCount;<br>
+      }<br>
+
+    Time complexity: O(n)<br>  
+</p>
+
+<h2>Part 3 - short answer</h2>
+<h3>Answer the following questions</h3>
+
+<p>
+    1.  True or false: n^2 + n is O(n^2).<br>
+        - True<br>
+    2.  True or false: n^2 * n is O(n^3).<br>
+        - True<br>
+    3.  True or false: n^2 + n is O(n).<br>
+        - False<br>
+    4.  What's the time complexity of the .indexOf array method?<br>
+        - O(n)<br>
+    5.  What's the time complexity of the .includes array method?<br>
+        - O(n)<br>
+    6.  What's the time complexity of the .forEach array method?<br>
+        - O(n)<br>
+    7.  What's the time complexity of the .sort array method?<br>
+        - O(n log n)
+    8.  What's the time complexity of the .unshift array method?<br>
+        - O(n)<br>
+    9.  What's the time complexity of the .push array method?<br>
+        - O(1)<br>
+    10. What's the time complexity of the .splice array method?<br>
+        - O(n)<br>
+    11. What's the time complexity of the .pop array method?<br>
+        - O(1)<br>
+    12. What's the time complexity of the Object.keys() function?<br>
+        - O(n)<br>
+    
+    **BONUS**<br>
+    
+    1.  What's the space complexity of the Object.keys() function?<br>
+        - O(n)
+</p>
+
+</body>
+</html>
